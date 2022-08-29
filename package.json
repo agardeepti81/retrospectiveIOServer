@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "nodemon server",
+    "test": "nodemon client"
+  },
+  "dependencies": {
+    "html-pdf": "^3.0.1",
+    "html-pdf-node": "^1.0.8",
+    "nodemon": "^2.0.19",
+    "pdf-creator-node": "^2.3.5",
+    "ws": "^8.8.1"
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+    #instance{
+      background-color: black;
+      color: white;
+      width: 200px;
+      height: 25px; 
+      font-size: large;
+      font-weight: bold;
+      margin: 5px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #heading{
+      text-align: center;
+    }
+
+    ul{
+      display: -webkit-flex;
+    }
+  
+    #notes {
+      width: 200px;
+      height: 150px;
+      background-color:  #2069f1;
+      margin: 5px;
+      text-align: left;
+      color: white;
+      font-weight: bold;
+    }
+    </style>
+    <title>Public Notes</title>
+  </head>
+  <body class="container">
+    <h3 id="heading">Session Notes</h3>
+    <h3  id="heading"> {{date}} </h3>
+    <ul>
+      {{#each Instances}}
+      <li id="instance">{{this.name}}</li>
+        {{#each notes}}
+        <li id="notes">{{this.note}}</li>
+        {{/each}}
+      {{/each}}
+    </ul>
+  </body>
+</html>
