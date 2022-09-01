@@ -20,17 +20,11 @@
     #heading{
       text-align: center;
     }
-
-    ul{
-      display: -webkit-flex;
-    }
-  
+ 
     #notes {
-      width: 200px;
-      height: 150px;
       background-color:  #2069f1;
-      margin: 5px;
-      text-align: left;
+      margin: 6px;
+      text-align: center;
       color: white;
       font-weight: bold;
     }
@@ -43,9 +37,11 @@
     <ul>
       {{#each Instances}}
       <li id="instance">{{this.name}}</li>
+      <ul>
         {{#each notes}}
         <li id="notes">{{this.note}}</li>
         {{/each}}
+      </ul>
       {{/each}}
     </ul>
   </body>
