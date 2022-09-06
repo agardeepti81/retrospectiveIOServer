@@ -153,6 +153,11 @@ wss.on("connection", (ws) => {
         break;
 
       case "createPDF":
+        var options = {
+          format: "A4",
+          orientation: "portrait",
+          border: "10mm",
+      };
         var currentDate = new Date();
         currentDate = currentDate.toLocaleString();
         var html = fs.readFileSync("template.html", "utf8");
@@ -176,9 +181,7 @@ wss.on("connection", (ws) => {
           type: "buffer",
         };
         
-        const pdfStream = await pdf.create(document, {
-          format: "A4"
-        })
+        const pdfStream = await pdf.create(document, options)
 
         ws.send(pdfStream, {binary: true});
         break;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+
     #instance{
       background-color: black;
       color: white;
@@ -22,26 +23,35 @@
     }
  
     #notes {
+      width: 162px;
+      height: 140px;
       background-color:  #2069f1;
-      margin: 6px;
+      margin: 10px;
       text-align: center;
       color: white;
-      font-weight: bold;
+      font-weight: 400;
+      display: inline-block;
+      word-wrap: break-word;
+      padding: 5px;
+      border-radius: 13%;
     }
+
     </style>
     <title>Public Notes</title>
   </head>
+
   <body class="container">
     <h3 id="heading">Session Notes</h3>
     <h3  id="heading"> {{date}} </h3>
     <ul>
       {{#each Instances}}
       <li id="instance">{{this.name}}</li>
-      <ul>
-        {{#each notes}}
-        <li id="notes">{{this.note}}</li>
-        {{/each}}
-      </ul>
+          <ul>
+            {{#each notes}}
+            <li id="notes">{{this.note}}</li>
+            {{/each}}
+          </ul>
+          <p style="page-break-after: always;">&nbsp;</p>
       {{/each}}
     </ul>
   </body>
